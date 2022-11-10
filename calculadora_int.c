@@ -18,6 +18,12 @@ int soma(int num1, int num2)
     return num1 + num2;
 }
 
+int subtracao(int num1, int num2)
+{
+    return num1 - num2;
+}
+
+
 
 int main(void)
 {
@@ -39,6 +45,11 @@ int main(void)
         
         case '0':
             return 0;
+
+        case '-':
+            coleta_operandos(num_op, &num1, &num2);
+            res = subtracao(num1, num2);
+            break;
         
         default:
             printf("Operacao nao suportada. Digita novamente");
