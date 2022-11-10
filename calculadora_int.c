@@ -32,6 +32,19 @@ int multiplicacao(int num1, int num2)
     return res;
 }
 
+int divisao(int num1, int num2)
+{
+    int aux = num1;
+    int cont = 0;
+    while(subtracao(aux, num2) >= 0)
+    {
+        aux = subtracao(aux, num2);
+        cont = soma(cont, 1);
+    }
+
+    return cont;
+}
+
 int main(void)
 {
     char op;
@@ -59,6 +72,11 @@ int main(void)
         case '*':
             coleta_operandos(num_op, &num1, &num2);
             res = multiplicacao(num1, num2);
+            break;
+        
+        case '/':
+            coleta_operandos(num_op, &num1, &num2);
+            res = divisao(num1, num2);
             break;
 
          case '0':
