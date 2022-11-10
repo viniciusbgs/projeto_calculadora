@@ -42,6 +42,14 @@ int divisao(int num1, int num2)
         cont = soma(cont, 1);
     }
 
+int potencia(int num1, int num2)
+{
+    int res = 1;
+    for (int i = 0; i < num2; i = soma(i, 1))
+        res = multiplicacao(res, num1);
+
+    return res;
+}
     return cont;
 }
 
@@ -77,6 +85,11 @@ int main(void)
         case '/':
             coleta_operandos(num_op, &num1, &num2);
             res = divisao(num1, num2);
+            break;
+
+                    case '^':
+            coleta_operandos(num_op, &num1, &num2);
+            res = potencia(num1, num2);
             break;
 
          case '0':
